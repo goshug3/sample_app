@@ -12,6 +12,7 @@ class ListsController < ApplicationController
   end
 
   def index
+    @lists = List
   end
 
   def show
