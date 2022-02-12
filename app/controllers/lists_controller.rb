@@ -5,14 +5,14 @@ class ListsController < ApplicationController
 
   def create
     list = List.new(list_params)
-    
+
     list.save
-    
+
     redirect_to '/top'
   end
 
   def index
-    @lists = List
+    @lists = List.all
   end
 
   def show
@@ -20,6 +20,8 @@ class ListsController < ApplicationController
 
   def edit
   end
+
+  private
 
   def list_params
     params.require(:list).permit(:title, :body)
